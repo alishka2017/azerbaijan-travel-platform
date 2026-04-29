@@ -36,7 +36,7 @@ export default function ToursPage() {
           {tours.map(tour => (
             <Link 
               key={tour.id} 
-              href={`/attractions/${tour.id}`}
+              href={`/tours/${tour.id}`}
               className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition group"
             >
               <div className="relative h-48 bg-gray-200">

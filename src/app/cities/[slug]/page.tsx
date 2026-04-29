@@ -36,8 +36,9 @@ export default async function CityPage({ params }: { params: { slug: string } })
     notFound();
   }
 
-  const attractions = getPlacesByCity(city.slug).filter(p => p.category !== 'Restaurants');
+  const attractions = getPlacesByCity(city.slug).filter(p => p.category !== 'Restaurants' && p.category !== 'Tours');
   const restaurants = getPlacesByCity(city.slug).filter(p => p.category === 'Restaurants');
+  const tours = getPlacesByCity(city.slug).filter(p => p.category === 'Tours');
   
   // Get coordinates for map
   const coords = cityCoordinates[city.slug] || { lat: 40.4093, lon: 49.8671 };
@@ -163,7 +164,7 @@ export default async function CityPage({ params }: { params: { slug: string } })
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {restaurants.map((restaurant) => (
                 <Link 
-                  href={`/attractions/${restaurant.id}`} 
+                  href={`/restaurants/${restaurant.id}`} 
                   key={restaurant.id}
                   className="group bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition"
                 >
@@ -189,6 +190,53 @@ export default async function CityPage({ params }: { params: { slug: string } })
                       <span className="text-sm text-gray-600">{restaurant.rating}</span>
                       {restaurant.priceLevel && (
                         <span className="text-sm text-gray-400">{restaurant.priceLevel}</span>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Top Tours */}
+        {tours.length > 0 && (
+          <section className="mb-12">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-800">Top Tours</h2>
+              <Link href={`/tours?city=${city.slug}`} className="text-[#00AA6C] font-medium hover:underline">
+                View All →
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {tours.map((tour) => (
+                <Link 
+                  href={`/tours/${tour.id}`} 
+                  key={tour.id}
+                  className="group bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition"
+                >
+                  <div className="relative h-40">
+                    <img 
+                      src={tour.image} 
+                      alt={tour.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                    />
+                    <div className="absolute top-2 left-2 bg-white/90 px-2 py-1 rounded text-xs font-medium">
+                      {tour.category}
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-gray-800 mb-1 group-hover:text-[#00AA6C]">
+                      {tour.name}
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <div className="flex text-yellow-400 text-sm">
+                        {'★'.repeat(Math.floor(tour.rating))}
+                        {'☆'.repeat(5 - Math.floor(tour.rating))}
+                      </div>
+                      <span className="text-sm text-gray-600">{tour.rating}</span>
+                      {tour.priceLevel && (
+                        <span className="text-sm text-gray-400">{tour.priceLevel}</span>
                       )}
                     </div>
                   </div>

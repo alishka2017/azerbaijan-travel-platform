@@ -21,7 +21,7 @@ export default function HomePage() {
         <Header />
 
         {/* Hero Section */}
-        <section className="relative h-[600px] bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1601042879364-b6b5e3e7e1a7?w=1920&q=80)' }}>
+        <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1601042879364-b6b5e3e7e1a7?w=1920&q=80)' }}>
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative z-10 h-full flex flex-col justify-center items-center text-white px-4">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center">Discover Azerbaijan</h1>
