@@ -13,32 +13,27 @@ const cityData = {
     { label: 'Расположение', value: 'Каспийское побережье' },
     { label: 'Климат', value: 'Умеренно континентальный' }
   ],
-  sections: [
-    {
-      title: 'Что посмотреть',
-      items: [
-        { name: 'Старый город (Ичери Шехер)', rating: 4.8, description: 'Древняя крепость с узкими улочками и историческими зданиями' },
-        { name: 'Башня Мэйден', rating: 4.7, description: 'Средневековая башня 12 века с панорамным видом' },
-        { name: 'Гобустан', rating: 4.7, description: 'Национальный парк с наскальными рисунками и грязевыми вулканами' },
-        { name: 'Дворец Ширваншахов', rating: 4.7, description: 'Исторический дворец 15 века в Старом городе' }
-      ]
-    },
-    {
-      title: 'Рестораны',
-      items: [
-        { name: 'Mugam Club', rating: 4.8, cuisine: 'Азербайджанская', price: '$$' },
-        { name: 'Şirvanşah', rating: 4.7, cuisine: 'Национальная', price: '$$' },
-        { name: 'Sky Grill', rating: 4.7, cuisine: 'Стейкхаус', price: '$$$' }
-      ]
-    },
-    {
-      title: 'Отели',
-      items: [
-        { name: 'Four Seasons Baku', rating: 4.9, type: 'Люкс', price: '$$$$' },
-        { name: 'JW Marriott Absheron', rating: 4.8, type: 'Премиум', price: '$$$' },
-        { name: 'Fairmont Baku', rating: 4.8, type: 'Люкс', price: '$$$$' }
-      ]
-    }
+  attractions: [
+    { name: 'Старый город (Ичери Шехер)', rating: 4.8, description: 'Древняя крепость с узкими улочками и историческими зданиями' },
+    { name: 'Башня Мэйден', rating: 4.7, description: 'Средневековая башня 12 века с панорамным видом' },
+    { name: 'Гобустан', rating: 4.7, description: 'Национальный парк с наскальными рисунками и грязевыми вулканами' },
+    { name: 'Дворец Ширваншахов', rating: 4.7, description: 'Исторический дворец 15 века в Старом городе' },
+    { name: 'Башни Пламени', rating: 4.6, description: 'Икона современного Баку, небоскребы в форме пламени' },
+    { name: 'Мемориал Шехидов', rating: 4.5, description: 'Мемориал с панорамным видом на город' }
+  ],
+  restaurants: [
+    { name: 'Mugam Club', rating: 4.8, cuisine: 'Азербайджанская', price: '$$', description: 'Элегантный ресторан с живой музыкой' },
+    { name: 'Şirvanşah', rating: 4.7, cuisine: 'Национальная', price: '$$', description: 'Традиционный ресторан с аутентичной кухней' },
+    { name: 'Sky Grill', rating: 4.7, cuisine: 'Стейкхаус', price: '$$$', description: 'Ресторан на крыше с видом на море' },
+    { name: 'Nargiz', rating: 4.6, cuisine: 'Международная', price: '$$$', description: 'Ресторан с панорамным видом на Баку' },
+    { name: 'Cafe The Public', rating: 4.5, cuisine: 'Кавказская', price: '$', description: 'Уютное кафе в центре города' }
+  ],
+  hotels: [
+    { name: 'Four Seasons Baku', rating: 4.9, type: 'Люкс', price: '$$$$', description: 'Роскошный отель в историческом центре' },
+    { name: 'JW Marriott Absheron', rating: 4.8, type: 'Премиум', price: '$$$', description: 'Современный отель в деловом центре' },
+    { name: 'Fairmont Baku', rating: 4.8, type: 'Люкс', price: '$$$$', description: 'Элегантный отель на набережной' },
+    { name: 'Hilton Baku', rating: 4.7, type: 'Премиум', price: '$$$', description: 'Отличное расположение в центре' },
+    { name: 'JW Marriott Absheron', rating: 4.7, type: 'Бизнес', price: '$$', description: 'Хороший выбор для деловых путешествий' }
   ],
   routes: [
     { name: 'Баку за 1 день', description: 'Обзорная экскурсия по столице' },
@@ -46,27 +41,6 @@ const cityData = {
     { name: 'Weekend in Baku', description: 'Короткий отдых в столице' }
   ]
 };
-
-// Рестораны в Баку
-const restaurants = [
-  { id: 1, name: 'Mugam Club', rating: 4.8, reviews: '2,341', cuisine: 'Азербайджанская', description: 'Элегантный ресторан с живой музыкой' },
-  { id: 2, name: 'Şirvanşah', rating: 4.7, reviews: '1,876', cuisine: 'Национальная', description: 'Традиционный ресторан с аутентичной кухней' },
-  { id: 3, name: 'Sky Grill', rating: 4.7, reviews: '876', cuisine: 'Стейкхаус', description: 'Ресторан на крыше с видом на море' }
-];
-
-// Отели в Баку
-const hotels = [
-  { id: 1, name: 'Four Seasons Baku', rating: 4.9, reviews: '1,543', type: 'Люкс', description: 'Роскошный отель в историческом центре' },
-  { id: 2, name: 'JW Marriott Absheron', rating: 4.8, reviews: '2,123', type: 'Премиум', description: 'Современный отель в деловом центре' },
-  { id: 3, name: 'Fairmont Baku', rating: 4.8, reviews: '987', type: 'Люкс', description: 'Элегантный отель на набережной' }
-];
-
-// Достопримечательности в Баку
-const attractions = [
-  { id: 1, name: 'Старый город (Ичери Шехер)', rating: 4.8, reviews: '3,456', type: 'Исторический', description: 'Древняя крепость с узкими улочками' },
-  { id: 2, name: 'Гобустан', rating: 4.7, reviews: '2,123', type: 'Природа', description: 'Национальный парк с наскальными рисунками' },
-  { id: 3, name: 'Башня Мэйден', rating: 4.7, reviews: '2,543', type: 'Исторический', description: 'Средневековая башня 12 века' }
-];
 
 export default function CityPage() {
   return (
@@ -112,133 +86,95 @@ export default function CityPage() {
           </div>
         </section>
 
-        {/* Overview */}
-        <section id="overview" className="py-12">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold mb-6">Обзор {cityData.name}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-3">Что посмотреть</h3>
-                <div className="space-y-3">
-                  {cityData.sections[0].items.map((item, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 bg-gray-50 rounded">
-                      <div>
-                        <div className="font-medium">{item.name}</div>
-                        <div className="text-sm text-gray-500">{item.description}</div>
-                      </div>
-                      <span className="bg-yellow-500 text-white px-2 py-1 rounded text-sm">
-                        ★ {item.rating}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-3">Готовые маршруты</h3>
-                <div className="space-y-3">
-                  {cityData.routes.map((route, index) => (
-                    <Link
-                      key={index}
-                      href={`/routes/${route.slug}`}
-                      className="block p-3 bg-blue-50 rounded hover:bg-blue-100 transition"
-                    >
-                      <div className="font-medium text-blue-800">{route.name}</div>
-                      <div className="text-sm text-blue-600">{route.description}</div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Attractions */}
-        <section id="attractions" className="py-12 bg-white">
+        <section id="attractions" className="py-12">
           <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold">Достопримечательности</h2>
-              <Link href="/attractions" className="text-blue-600 hover:text-blue-800 text-sm">
-                Все достопримечательности →
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {attractions.map((attraction) => (
-                <Link
-                  key={attraction.id}
-                  href={`/attractions/${attraction.id}`}
-                  className="block bg-gray-50 rounded-lg p-5 hover:bg-gray-100 transition"
-                >
+            <h2 className="text-2xl font-bold mb-6">Достопримечательности {cityData.name}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {cityData.attractions.map((attraction, index) => (
+                <div key={index} className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-semibold text-gray-800">{attraction.name}</h3>
-                    <span className="bg-yellow-500 text-white px-2 py-0.5 rounded text-sm">
+                    <span className="bg-yellow-500 text-white px-2 py-1 rounded text-sm">
                       ★ {attraction.rating}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-500">{attraction.city} • {attraction.type}</p>
-                  <p className="text-sm text-gray-600 mt-2">{attraction.description}</p>
-                  <p className="text-xs text-gray-400 mt-2">{attraction.reviews} отзывов</p>
-                </Link>
+                  <p className="text-sm text-gray-600">{attraction.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Restaurants */}
-        <section id="restaurants" className="py-12">
+        <section id="restaurants" className="py-12 bg-gray-100">
           <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold">Рестораны</h2>
-              <Link href="/restaurants" className="text-blue-600 hover:text-blue-800 text-sm">
-                Все рестораны →
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {restaurants.map((restaurant) => (
-                <Link
-                  key={restaurant.id}
-                  href={`/restaurants/${restaurant.id}`}
-                  className="block bg-gray-50 rounded-lg p-5 hover:bg-gray-100 transition"
-                >
+            <h2 className="text-2xl font-bold mb-6">Рестораны {cityData.name}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {cityData.restaurants.map((restaurant, index) => (
+                <div key={index} className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-semibold text-gray-800">{restaurant.name}</h3>
-                    <span className="bg-green-600 text-white px-2 py-0.5 rounded text-sm">
+                    <span className="bg-yellow-500 text-white px-2 py-1 rounded text-sm">
                       ★ {restaurant.rating}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-500">{restaurant.cuisine} • {restaurant.price}</p>
-                  <p className="text-sm text-gray-600 mt-2">{restaurant.description}</p>
-                  <p className="text-xs text-gray-400 mt-2">{restaurant.reviews} отзывов</p>
-                </Link>
+                  <div className="flex gap-2 mb-2">
+                    <span className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded text-xs">
+                      {restaurant.cuisine}
+                    </span>
+                    <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs">
+                      {restaurant.price}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600">{restaurant.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Hotels */}
-        <section id="hotels" className="py-12 bg-white">
+        <section id="hotels" className="py-12">
           <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold">Отели</h2>
-              <Link href="/hotels" className="text-blue-600 hover:text-blue-800 text-sm">
-                Все отели →
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {hotels.map((hotel) => (
-                <Link
-                  key={hotel.id}
-                  href={`/hotels/${hotel.id}`}
-                  className="block bg-gray-50 rounded-lg p-5 hover:bg-gray-100 transition"
-                >
+            <h2 className="text-2xl font-bold mb-6">Отели {cityData.name}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {cityData.hotels.map((hotel, index) => (
+                <div key={index} className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-semibold text-gray-800">{hotel.name}</h3>
-                    <span className="bg-blue-600 text-white px-2 py-0.5 rounded text-sm">
+                    <span className="bg-yellow-500 text-white px-2 py-1 rounded text-sm">
                       ★ {hotel.rating}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-500">{hotel.type}</p>
-                  <p className="text-sm text-gray-600 mt-2">{hotel.description}</p>
-                  <p className="text-xs text-gray-400 mt-2">{hotel.reviews} отзывов</p>
+                  <div className="flex gap-2 mb-2">
+                    <span className="bg-purple-100 text-purple-800 px-2 py-0.5 rounded text-xs">
+                      {hotel.type}
+                    </span>
+                    <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs">
+                      {hotel.price}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600">{hotel.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Routes */}
+        <section id="routes" className="py-12 bg-blue-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-bold mb-6">Готовые маршруты</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {cityData.routes.map((route, index) => (
+                <Link
+                  key={index}
+                  href={`/routes/${route.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition"
+                >
+                  <h3 className="font-semibold text-blue-800 mb-2">{route.name}</h3>
+                  <p className="text-sm text-gray-600">{route.description}</p>
                 </Link>
               ))}
             </div>
@@ -246,12 +182,14 @@ export default function CityPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-12 bg-blue-900 text-white">
-          <div className="container mx-auto px-4 text-center">
+        <section className="py-12 bg-blue-600 text-white text-center">
+          <div className="container mx-auto px-4">
             <h2 className="text-2xl font-bold mb-4">Планируете поездку в {cityData.name}?</h2>
-            <p className="text-blue-200 mb-6">Найдите лучшие отели, рестораны и развлечения</p>
-            <Link href="/contact" className="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition">
-              Оставить заявку
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              Начните планировать свое путешествие сегодня и откройте для себя все чудеса этого города.
+            </p>
+            <Link href="/plan-trip" className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+              План поездки
             </Link>
           </div>
         </section>
@@ -260,4 +198,14 @@ export default function CityPage() {
       <Footer />
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  return [
+    { lang: 'ru', city: 'baku' },
+    { lang: 'ru', city: 'gandja' },
+    { lang: 'ru', city: 'sheki' },
+    { lang: 'ru', city: 'lenkoran' },
+    { lang: 'ru', city: 'gabala' }
+  ];
 }
