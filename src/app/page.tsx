@@ -5,7 +5,7 @@ import { cities, places } from '@/data/places';
 import Head from 'next/head';
 
 export default function HomePage() {
-  const topAttractions = places.filter(p => p.category !== 'Restaurants').slice(0, 8);
+  const topAttractions = places.filter(p => p.category !== 'Restaurants' && p.category !== 'Tours').slice(0, 8);
   const topRestaurants = places.filter(p => p.category === 'Restaurants');
 
   return (
