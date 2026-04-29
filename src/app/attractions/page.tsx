@@ -2,148 +2,148 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 
-// Полные данные о достопримечательностях Азербайджана
+// Complete data about attractions in Azerbaijan
 const attractions = [
   {
     id: 1,
-    name: 'Старый город (Ичери Шехер)',
-    city: 'Баку',
+    name: 'Old City (Icherisheher)',
+    city: 'Baku',
     citySlug: 'baku',
     rating: 4.8,
     reviews: '3,456',
-    type: 'Исторический',
-    description: 'Древняя крепость с узкими улочками, мечетями и историческими зданиями. Всемирное наследие ЮНЕСКО с 2000 года. Один из самых посещаемых туристических объектов в Азербайджане.',
-    history: 'Крепость была основана в I веке до н.э. и служила важным торговым центром на Великом Шелковом пути. Внутри стен сохранились многочисленные исторические здания, мечети и караван-сараи.',
-    features: ['ЮНЕСКО', 'Экскурсии', 'Сувениры', 'Музеи', 'Фото', 'История'],
-    address: 'Улица Ичери Шехер',
+    type: 'Historical',
+    description: 'Ancient fortress with narrow streets, mosques, and historical buildings. UNESCO World Heritage Site since 2000. One of the most visited tourist attractions in Azerbaijan.',
+    history: 'The fortress was founded in the 1st century BC and served as an important trading center on the Great Silk Road. Inside the walls, numerous historical buildings, mosques, and caravanserais have been preserved.',
+    features: ['UNESCO', 'Guided Tours', 'Souvenirs', 'Museums', 'Photos', 'History'],
+    address: 'Icherisheher Street',
     hours: '09:00 - 18:00',
-    price: 'Бесплатно',
+    price: 'Free',
     image: '/images/icheri-sheher.jpg'
   },
   {
     id: 2,
-    name: 'Гобустан',
-    city: 'Баку',
+    name: 'Gobustan',
+    city: 'Baku',
     citySlug: 'baku',
     rating: 4.7,
     reviews: '2,123',
-    type: 'Природа',
-    description: 'Национальный парк с древними наскальными рисунками возрастом до 40 тысяч лет и уникальными грязевыми вулканами. Расположен в 60 км от Баку.',
-    history: 'На территории парка обнаружено более 6 тысяч наскальных рисунков, отображающих охоту, танцы и ритуалы древних людей. Парк также известен своими грязевыми вулканами.',
-    features: ['Наскальные рисунки', 'Вулканы', 'Экскурсии', 'Музей', 'Природа'],
-    address: 'Гобустан, 60 км от Баку',
+    type: 'Nature',
+    description: 'National park with ancient rock carvings dating back up to 40,000 years and unique mud volcanoes. Located 60 km from Baku.',
+    history: 'More than 6,000 rock drawings depicting hunting, dancing, and rituals of ancient people have been discovered in the park. The park is also known for its mud volcanoes.',
+    features: ['Rock Art', 'Volcanoes', 'Guided Tours', 'Museum', 'Nature'],
+    address: 'Gobustan, 60 km from Baku',
     hours: '09:00 - 18:00',
-    price: '5 манат',
+    price: '5 AZN',
     image: '/images/gobustan.jpg'
   },
   {
     id: 3,
-    name: 'Дворец Шеки Ханов',
-    city: 'Шеки',
+    name: 'Sheki Khan Palace',
+    city: 'Sheki',
     citySlug: 'sheki',
     rating: 4.9,
     reviews: '1,876',
-    type: 'Архитектура',
-    description: 'Исторический дворец 18 века с уникальной архитектурой и фресками. Памятник Всемирного наследия ЮНЕСКО с 2019 года.',
-    history: 'Дворец был построен в 1797 году для шекинского хана Мухаммед Хасан-бека. Здание известно своими уникальными фресками и мозаиками из цветного стекла.',
-    features: ['ЮНЕСКО', 'Экскурсии', 'Музей', 'Фото', 'Архитектура'],
-    address: 'Улица Карева, 5',
+    type: 'Architecture',
+    description: 'Historical palace of the 18th century with unique architecture and frescoes. UNESCO World Heritage Site since 2019.',
+    history: 'The palace was built in 1797 for Sheki Khan Muhammad Hasan-bek. The building is famous for its unique frescoes and mosaics made of colored glass.',
+    features: ['UNESCO', 'Guided Tours', 'Museum', 'Photos', 'Architecture'],
+    address: 'Kareva Street, 5',
     hours: '10:00 - 18:00',
-    price: '8 манат',
+    price: '8 AZN',
     image: '/images/sheki-khan.jpg'
   },
   {
     id: 4,
-    name: 'Башня Мэйден',
-    city: 'Баку',
+    name: 'Maiden Tower',
+    city: 'Baku',
     citySlug: 'baku',
     rating: 4.7,
     reviews: '2,543',
-    type: 'Исторический',
-    description: 'Средневековая башня 12 века с панорамным видом на город. Один из символов Баку.',
-    history: 'Башня была построена в XII веке и служила частью оборонительных сооружений Старого города. Её высота составляет 29,5 метров.',
-    features: ['ЮНЕСКО', 'Вид на город', 'Экскурсии', 'История'],
-    address: 'Улица Мэйден, 1',
+    type: 'Historical',
+    description: 'Medieval tower of the 12th century with panoramic views of the city. One of the symbols of Baku.',
+    history: 'The tower was built in the 12th century and served as part of the defensive fortifications of the Old City. Its height is 29.5 meters.',
+    features: ['UNESCO', 'City View', 'Guided Tours', 'History'],
+    address: 'Maiden Street, 1',
     hours: '10:00 - 18:00',
-    price: '6 манат',
+    price: '6 AZN',
     image: '/images/maiden-tower.jpg'
   },
   {
     id: 5,
-    name: 'Габалинские водопады',
-    city: 'Габала',
+    name: 'Gabala Waterfalls',
+    city: 'Gabala',
     citySlug: 'gabala',
     rating: 4.6,
     reviews: '987',
-    type: 'Природа',
-    description: 'Красивые водопады в горах с чистой холодной водой и живописными пейзажами. Идеальное место для пикника и фотографий.',
-    history: 'Водопады образовались в результате таяния снегов в Кавказских горах. Высота падения воды достигает 30 метров.',
-    features: ['Походы', 'Фото', 'Пикник', 'Природа'],
-    address: 'Горы Кавказ, 20 км от Габалы',
-    hours: 'Круглосуточно',
-    price: 'Бесплатно',
+    type: 'Nature',
+    description: 'Beautiful waterfalls in the mountains with clean cold water and picturesque landscapes. Ideal place for picnics and photos.',
+    history: 'The waterfalls were formed as a result of snowmelt in the Caucasus Mountains. The height of the water fall reaches 30 meters.',
+    features: ['Hiking', 'Photos', 'Picnic', 'Nature'],
+    address: 'Caucasus Mountains, 20 km from Gabala',
+    hours: 'Open 24/7',
+    price: 'Free',
     image: '/images/gabala-waterfalls.jpg'
   },
   {
     id: 6,
-    name: 'Театр Оперы и Балета',
-    city: 'Баку',
+    name: 'Opera and Ballet Theatre',
+    city: 'Baku',
     citySlug: 'baku',
     rating: 4.8,
     reviews: '1,234',
-    type: 'Культура',
-    description: 'Величественное здание театра с высококачественными постановками. Расположено в центре Баку.',
-    history: 'Театр был построен в 1911 году и является одним из старейших оперных театров на Кавказе. Здание выполнено в стиле барокко.',
-    features: ['Балет', 'Опера', 'Концерты', 'Экскурсии'],
-    address: 'Площадь Урду, 1',
+    type: 'Culture',
+    description: 'Magnificent theatre building with high-quality performances. Located in the center of Baku.',
+    history: 'The theatre was built in 1911 and is one of the oldest opera theatres in the Caucasus. The building is built in the Baroque style.',
+    features: ['Ballet', 'Opera', 'Concerts', 'Guided Tours'],
+    address: 'Urdu Square, 1',
     hours: '10:00 - 22:00',
-    price: 'От 10 манат',
+    price: 'From 10 AZN',
     image: '/images/opera.jpg'
   },
   {
     id: 7,
-    name: 'Озеро Гоязан',
-    city: 'Гянджа',
+    name: 'Goyazan Lake',
+    city: 'Ganja',
     citySlug: 'gandja',
     rating: 4.5,
     reviews: '654',
-    type: 'Природа',
-    description: 'Красивое озеро в окружении гор с чистой водой и живописными пейзажами. Идеальное место для отдыха на природе.',
-    features: ['Природа', 'Фото', 'Пикник', 'Рыбалка'],
-    address: 'Горы Муровдаг, 15 км от Гянджи',
-    hours: 'Круглосуточно',
-    price: 'Бесплатно',
+    type: 'Nature',
+    description: 'Beautiful lake surrounded by mountains with clean water and picturesque landscapes. Ideal place for outdoor recreation.',
+    features: ['Nature', 'Photos', 'Picnic', 'Fishing'],
+    address: 'Murovdag Mountains, 15 km from Ganja',
+    hours: 'Open 24/7',
+    price: 'Free',
     image: '/images/goyazan.jpg'
   },
   {
     id: 8,
-    name: 'Дворец Ширваншахов',
-    city: 'Баку',
+    name: 'Palace of Shirvanshahs',
+    city: 'Baku',
     citySlug: 'baku',
     rating: 4.7,
     reviews: '2,123',
-    type: 'Исторический',
-    description: 'Исторический дворец 15 века, расположенный в Старом городе. Памятник архитектуры и истории.',
-    history: 'Дворец был резиденцией правителей Ширваншахов. Здание известно своей уникальной архитектурой и мозаикой.',
-    features: ['ЮНЕСКО', 'Экскурсии', 'Музей', 'История'],
-    address: 'Улица Ичери Шехер',
+    type: 'Historical',
+    description: 'Historical palace of the 15th century, located in the Old City. Monument of architecture and history.',
+    history: 'The palace was the residence of the Shirvanshah rulers. The building is known for its unique architecture and mosaics.',
+    features: ['UNESCO', 'Guided Tours', 'Museums', 'History'],
+    address: 'Icherisheher Street',
     hours: '10:00 - 18:00',
-    price: '6 манат',
+    price: '6 AZN',
     image: '/images/shirvanshah-palace.jpg'
   }
 ];
 
-// Фильтры
+// Filters
 const filters = [
-  { name: 'Все', slug: 'all' },
-  { name: 'Исторические', slug: 'historical' },
-  { name: 'Природа', slug: 'nature' },
-  { name: 'Архитектура', slug: 'architecture' },
-  { name: 'Культура', slug: 'culture' },
-  { name: 'Музеи', slug: 'museums' },
+  { name: 'All', slug: 'all' },
+  { name: 'Historical', slug: 'historical' },
+  { name: 'Nature', slug: 'nature' },
+  { name: 'Architecture', slug: 'architecture' },
+  { name: 'Culture', slug: 'culture' },
+  { name: 'Museums', slug: 'museums' },
 ];
 
-const cities = ['Баку', 'Габала', 'Шеки', 'Гянджа', 'Ленкорань'];
+const cities = ['Baku', 'Gabala', 'Sheki', 'Ganja', 'Lankaran'];
 
 export default function AttractionsPage() {
   return (
@@ -155,12 +155,12 @@ export default function AttractionsPage() {
         <section className="bg-blue-900 text-white py-12">
           <div className="container mx-auto px-4">
             <nav className="text-sm text-blue-200 mb-4">
-              <Link href="/" className="hover:text-white">Главная</Link>
+              <Link href="/" className="hover:text-white">Home</Link>
               <span className="mx-2">/</span>
-              <span>Достопримечательности</span>
+              <span>Attractions</span>
             </nav>
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">Достопримечательности Азербайджана</h1>
-            <p className="text-blue-200">Лучшие места для экскурсий и отдыха — от древних памятников до природных чудес</p>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">Attractions in Azerbaijan</h1>
+            <p className="text-blue-200">Best places for excursions and recreation — from ancient monuments to natural wonders</p>
           </div>
         </section>
 
@@ -180,9 +180,9 @@ export default function AttractionsPage() {
                 ))}
               </div>
               <div className="ml-auto flex items-center gap-2 text-sm text-gray-500">
-                <span>Город:</span>
+                <span>City:</span>
                 <select className="border rounded px-2 py-1">
-                  <option>Все города</option>
+                  <option>All cities</option>
                   {cities.map((city) => (
                     <option key={city}>{city}</option>
                   ))}
@@ -196,13 +196,13 @@ export default function AttractionsPage() {
         <section className="py-8">
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center mb-6">
-              <p className="text-gray-600">Найдено: {attractions.length} достопримечательностей</p>
+              <p className="text-gray-600">Found: {attractions.length} attractions</p>
               <div className="flex items-center gap-2 text-sm">
-                <span>Сортировка:</span>
+                <span>Sort by:</span>
                 <select className="border rounded px-2 py-1">
-                  <option>По рейтингу</option>
-                  <option>По количеству отзывов</option>
-                  <option>По названию</option>
+                  <option>Rating</option>
+                  <option>Number of reviews</option>
+                  <option>Name</option>
                 </select>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function AttractionsPage() {
                               ★ {attraction.rating}
                             </span>
                           </div>
-                          <p className="text-xs text-gray-500 mt-1">{attraction.reviews} отзывов</p>
+                          <p className="text-xs text-gray-500 mt-1">{attraction.reviews} reviews</p>
                         </div>
                       </div>
                       <p className="text-sm text-gray-600 mt-3 line-clamp-2">{attraction.description}</p>
@@ -257,10 +257,10 @@ export default function AttractionsPage() {
         {/* CTA */}
         <section className="py-12 bg-blue-50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Хотите организовать экскурсию?</h2>
-            <p className="text-gray-600 mb-6">Наши гиды проведут вас по лучшим местам Азербайджана</p>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Want to organize an excursion?</h2>
+            <p className="text-gray-600 mb-6">Our guides will take you through the best places in Azerbaijan</p>
             <Link href="/tours" className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">
-              Выбрать тур
+              Choose a Tour
             </Link>
           </div>
         </section>
